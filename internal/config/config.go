@@ -38,7 +38,7 @@ func Load() Config {
 	}
 	uploadsDir := strings.TrimSpace(os.Getenv("UPLOADS_DIR"))
 	if uploadsDir == "" {
-		uploadsDir = filepath.Join(root, "uploads")
+		uploadsDir = filepath.Join(dataDir, "uploads")
 	}
 
 	return Config{

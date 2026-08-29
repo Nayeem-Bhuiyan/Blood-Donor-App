@@ -11,7 +11,7 @@ data/
 uploads/
 ```
 
-Uploaded images are stored in `uploads/` and donor records are stored in `data/donors.json`.
+Uploaded images are stored in `/data/uploads/` and donor records are stored in `/data/donors.json`.
 
 For a persistent disk mounted at `/data`, set:
 
@@ -19,7 +19,10 @@ For a persistent disk mounted at `/data`, set:
 DATA_DIR=/data
 ```
 
-The application then reads and writes donor records at `/data/donors.json`. Set `UPLOADS_DIR` if uploaded images also need to use a persistent mount.
+The application then reads and writes donor records at `/data/donors.json` and uploaded images at `/data/uploads/`.
 
-```Run
+## Run
+
+```bash
 go run ./cmd/server
+```
