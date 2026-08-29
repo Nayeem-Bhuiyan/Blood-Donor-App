@@ -376,6 +376,11 @@ func main() {
     http.Handle("/uploads/", http.StripPrefix("/uploads/", http.FileServer(http.Dir(uploadsRoot))))
     http.Handle("/", http.FileServer(http.Dir(filepath.Join(root, "static"))))
 
-    fmt.Println("Blood Bank app is running at http://localhost:8084")
-    log.Fatal(http.ListenAndServe(":8084", nil))
+    port := os.Getenv("PORT")
+    if port == "" {
+        port = "8084"
+    }
+
+    fmt.Printf("Blood Bank app is running on port %s\n", port)
+    log.Fatal(http.ListenAndServe(":"+port, nil))
 }
