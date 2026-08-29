@@ -48,7 +48,7 @@ body {
 
 .top-slider .slider-track {
   display: flex;
-  width: max-content;
+  width: 600%;
   height: 100%;
   animation: slideHorizontal 22s linear infinite;
 }
@@ -58,8 +58,7 @@ body {
   flex-shrink: 0;
   background-size: cover;
   background-position: center;
-  width: 100vw;
-  max-width: 1400px;
+  width: 16.6667%;
   height: 100%;
   min-height: 180px;
 }
@@ -447,6 +446,8 @@ h1 {
 .modal-content {
   position: relative;
   width: min(540px, 100%);
+  max-height: calc(100dvh - 48px);
+  overflow-y: auto;
   background: white;
   border-radius: 18px;
   padding: 28px 24px 20px;
@@ -573,6 +574,27 @@ textarea {
 }
 
 @media (max-width: 640px) {
+  .page-shell {
+    padding: 18px 12px 40px;
+  }
+
+  .top-slider {
+    height: 150px;
+    border-radius: 14px;
+  }
+
+  .slide-item {
+    min-height: 150px;
+  }
+
+  .banner-overlay {
+    padding: 20px;
+  }
+
+  .banner-overlay h2 {
+    font-size: 1.8rem;
+  }
+
   .donor-grid {
     grid-template-columns: 1fr;
   }
@@ -587,7 +609,19 @@ textarea {
   }
 
   .modal-content {
-    padding: 24px 18px 18px;
+    width: 100%;
+    max-height: calc(100dvh - 16px);
+    border-radius: 14px;
+    padding: 50px 16px 18px;
+  }
+
+  .modal {
+    align-items: flex-start;
+    padding: 8px;
+  }
+
+  .modal-photo {
+    height: 180px;
   }
 
   .modal-row {
@@ -597,5 +631,40 @@ textarea {
 
   .modal-row span:last-child {
     text-align: left;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .form-actions .primary-btn,
+  .form-actions .secondary-btn {
+    width: 100%;
+  }
+
+  .card-actions .primary-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 380px) {
+  .page-size-wrap {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .page-size-select {
+    width: 100%;
+  }
+
+  .pagination-bar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .pagination-results {
+    justify-content: center;
+    margin-left: 0;
   }
 }
