@@ -27,7 +27,8 @@ coverage.out
 *.coverprofile
 
 # Persistent local data and uploaded files
-
+data/
+uploads/
 
 # Local JSON database
 # Uncomment this if donors.json contains real/private donor data
