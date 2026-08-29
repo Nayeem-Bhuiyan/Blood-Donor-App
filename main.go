@@ -84,6 +84,9 @@ func saveUploadedFile(file multipart.File, header *multipart.FileHeader) (string
 	if err != nil {
 		return "", err
 	}
+	if len(compressed) > maxPictureSize {
+		return "", fmt.Errorf("compressed picture exceeds %d KB", maxPictureSize/1024)
+	}
 
 	safeName := fmt.Sprintf("donor-%d-%d.jpg", os.Getpid(), time.Now().UnixNano())
 	targetPath := filepath.Join(uploadsDir(), safeName)
