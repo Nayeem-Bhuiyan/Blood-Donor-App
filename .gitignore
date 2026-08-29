@@ -1,0 +1,34 @@
+# Go build output
+bloodbank.exe
+*.exe
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# IDE / editor files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# Test / coverage output
+coverage.out
+*.coverprofile
+
+# Local uploaded files
+uploads/
+
+# Local JSON database
+# Uncomment this if donors.json contains real/private donor data
+# donors.json
